@@ -1,0 +1,1 @@
+//create a input field with black border and white background color and a placeholder text aligned in center named as Mobile Number using react and tailwind css
