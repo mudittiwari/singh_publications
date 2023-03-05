@@ -21,7 +21,7 @@ function BookComp() {
                 </div>
                 <h1 className="text-sm font-medium mb-0 mx-0 w-max mt-0" style={{ 'color': '#777777' }}>11 Jan 2023</h1>
             </div>
-            <div style={{ 'width': "1px", 'height': '80%', 'backgroundColor': '#315ED2' }}></div>
+            <div style={{ 'width': "0px", 'height': '80%', 'backgroundColor': '#315ED2','border':'1px solid #315ED2' }}></div>
             <div className='h-full w-full justify-center flex flex-col items-center'>
                 <h1 className="text-2xl font-bold mb-0 mx-0 w-max mt-0" style={{ 'color': '#315ED2' }}>599 Rs.</h1>
                 <button className=" text-white px-4 py-1 mt-5 rounded-2xl focus:outline-none" style={{ 'backgroundColor': "#315ED2" }}>

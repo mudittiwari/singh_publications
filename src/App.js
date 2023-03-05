@@ -9,11 +9,15 @@ import Home from './Homepage';
 import Wishlist from './Wishlist';
 import Cart from './Cart';
 import PurchasedBooks from './PurchasedBooks';
+import Orderdetails from './Orderdetails';
+import Navbar from './comps/Navbar';
 
 function App() {
   return (
     <>
-    <PurchasedBooks/>
+    <Navbar/>
+    <Orderdetails/>
+    
     </>
   );
 }
