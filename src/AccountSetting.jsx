@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 function AccountSetting() {
+    const navigate = useNavigate();
     return (
         <>
             <div className="w-screen h-screen flex items-center justify-center
@@ -9,7 +10,10 @@ function AccountSetting() {
             " style={{ 'border': '1px solid #777777' }}>
                     <h1 className="text-2xl font-medium mb-5" style={{ 'color': '#315ED2' }}>Account Setting</h1>
                     
-                    <button className="  px-12 py-2 mb-1 rounded-2xl focus:outline-none" style={{
+                    <button onClick={(e)=>{
+                        e.preventDefault();
+                        navigate('/billingaddress');
+                    }} className="  px-12 py-2 mb-1 rounded-2xl focus:outline-none" style={{
                             'border': '1px solid #777777',
                             'backgroundColor': '#fff',
                             'textAlign': 'center',
@@ -17,7 +21,10 @@ function AccountSetting() {
                         }}>
                         Billing Address
                     </button>
-                    <button className="  px-12 py-2 mt-3 rounded-2xl focus:outline-none" style={{
+                    <button onClick={(e)=>{
+                        e.preventDefault();
+                        navigate('/shippingaddress');
+                    }} className="  px-12 py-2 mt-3 rounded-2xl focus:outline-none" style={{
                             'border': '1px solid #777777',
                             'backgroundColor': '#fff',
                             'textAlign': 'center',

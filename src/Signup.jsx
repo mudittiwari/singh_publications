@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 function Signup() {
+    const navigate = useNavigate();
     return (
         <>
             <div className="w-screen h-screen flex items-center justify-center
@@ -8,7 +9,7 @@ function Signup() {
                 <div className="w-4/5 h-4/5 bg-white flex flex-col items-center justify-center rounded-lg
             " style={{ 'border': '1px solid #777777' }}>
                     <h1 className="text-2xl font-medium mb-5" style={{ 'color': '#315ED2' }}>Signup</h1>
-                    <input className="p-2 w-80 my-1 rounded-xl focus:outline-none"
+                    <input className="p-2 w-72 my-1 rounded-xl focus:outline-none"
                         type="text"
                         placeholder="First Name"
                         style={{
@@ -17,7 +18,7 @@ function Signup() {
                             'textAlign': 'center',
                         }}
                     />
-                    <input className="p-2 w-80 my-1 rounded-xl focus:outline-none"
+                    <input className="p-2 w-72 my-1 rounded-xl focus:outline-none"
                         type="text"
                         placeholder="Last Name"
                         style={{
@@ -25,7 +26,7 @@ function Signup() {
                             'backgroundColor': '#fff',
                             'textAlign': 'center',
                         }}
-                    /><input className="p-2 w-80 my-1 rounded-xl focus:outline-none"
+                    /><input className="p-2 w-72 my-1 rounded-xl focus:outline-none"
                         type="email"
                         placeholder="Email Address"
                         style={{
@@ -33,7 +34,7 @@ function Signup() {
                             'backgroundColor': '#fff',
                             'textAlign': 'center',
                         }}
-                    /><input className="p-2 w-80 my-1 rounded-xl focus:outline-none"
+                    /><input className="p-2 w-72 my-1 rounded-xl focus:outline-none"
                         type="text"
                         placeholder="Gender"
                         style={{
@@ -41,7 +42,7 @@ function Signup() {
                             'backgroundColor': '#fff',
                             'textAlign': 'center',
                         }}
-                    /><input className="p-2 w-80 my-1 rounded-xl focus:outline-none"
+                    /><input className="p-2 w-72 my-1 rounded-xl focus:outline-none"
                         type="date"
                         placeholder="Birth Date"
                         style={{
@@ -49,7 +50,7 @@ function Signup() {
                             'backgroundColor': '#fff',
                             'textAlign': 'center',
                         }}
-                    /><input className="p-2 w-80 my-1 rounded-xl focus:outline-none"
+                    /><input className="p-2 w-72 my-1 rounded-xl focus:outline-none"
                         type="text"
                         placeholder="Mobile Number"
                         style={{
@@ -58,7 +59,10 @@ function Signup() {
                             'textAlign': 'center',
                         }}
                     />
-                    <button className=" text-white px-12 py-2 mt-5 rounded-2xl focus:outline-none" style={{ 'backgroundColor': "#315ED2" }}>
+                    <button onClick={(e)=>{
+                        e.preventDefault();
+                        navigate('/login');
+                    }} className=" text-white px-12 py-2 mt-5 rounded-2xl focus:outline-none" style={{ 'backgroundColor': "#315ED2" }}>
                         Signup
                     </button>
                 </div>
