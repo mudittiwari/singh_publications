@@ -15,12 +15,13 @@ import Orders from './Orders';
 import Otp from './Otp';
 import BillingAddress from './BillingAddress';
 import { BrowserRouter,HashRouter ,Routes, Route } from 'react-router-dom';
+import Footer from './comps/Footer';
 function App() {
   return (
     <>
     
      <HashRouter>
-     {/* <Navbar /> */}
+     <Navbar />
         <Routes>
           <Route exact  path="/" element={<Home />} />
           <Route exact  path="/login" element={<Login />} />
@@ -37,6 +38,7 @@ function App() {
           <Route path="/orders" element={<Orders />} />
 
         </Routes>
+        <Footer/>
       </HashRouter>
     </>
   );
