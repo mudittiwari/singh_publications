@@ -1,7 +1,10 @@
 import sample from './assets/sample.png';
 import book from './assets/book.png';
 import star from './assets/star.png';
-
+import app from './Firebase';
+import { useNavigate } from 'react-router-dom';
+import { getAuth, signInWithPhoneNumber, RecaptchaVerifier } from "firebase/auth";
+import { useEffect } from 'react';
 function BookComp() {
     return (
         <div className=' my-4 rounded-xl p-2 relative' style={{ 'border': '1px solid #777777','width':'45%' }} >
@@ -23,8 +26,30 @@ function BookComp() {
         </div>
     );
 }
+async function checkuser()
+{
+    const auth = getAuth(app);
+    auth.onAuthStateChanged(async (user) => {
+        if (!user)
+        {
+            return "push";
+        }
+        return "leave";
+        
+    });
+}
 
 function Home() {
+
+    const navigate = useNavigate();
+    
+    useEffect(() => {
+        console.log(localStorage.getItem('pubuser'));
+        if(checkuser()==="push")
+        {
+            navigate('/login');
+        }
+    },[]);
     return (
         <>
             <div className="w-screen flex justify-center py-5">
