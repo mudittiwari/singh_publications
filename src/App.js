@@ -17,6 +17,8 @@ import BillingAddress from './BillingAddress';
 import { BrowserRouter,HashRouter ,Routes, Route } from 'react-router-dom';
 import Footer from './comps/Footer';
 import Product from './Product';
+import Deliveryaddress from './Deliveryaddress';
+import Orderplaced from './Orderplaced';
 function App() {
   return (
     <>
@@ -30,12 +32,14 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/shippingaddress" element={<ShippingAddress />} />
           <Route path="/billingaddress" element={<BillingAddress />} />
+          <Route path="/deliveryaddress" element={<Deliveryaddress />} />
           <Route path="/profilesetting" element={<ProfileSetting />} />
           <Route path="/accountsetting" element={<AccountSetting />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/purchasedbooks" element={<PurchasedBooks />} />
           <Route path="/orderdetails" element={<Orderdetails />} />
+          <Route path="/orderplaced" element={<Orderplaced />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/product" element={<Product />} />
 

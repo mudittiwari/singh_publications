@@ -4,6 +4,7 @@ import book from './assets/book.png';
 import star from './assets/star.png';
 import { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 function BookComp(props) {
     return (
         <div className=' my-4 mx-2 h-36 rounded-xl p-2 relative flex items-center' style={{ 'border': '1px solid #315ED2', 'width': '400px' }} >
@@ -64,6 +65,7 @@ function BookComp(props) {
 }
 
 function Cart() {
+    const navigate = useNavigate();
     const [user, setuser] = useState(JSON.parse(localStorage.getItem('pubuser')));
     const [items, setitems] = useState([]);
     const [total_price, settotal_price] = useState(0);
@@ -110,7 +112,10 @@ function Cart() {
                         
                         <div className='ml-2 mr-5 flex flex-col items-center'>
                             <h1 className="text-3xl font-bold mb-0 mx-0 w-max mt-0" style={{ 'color': '#315ED2' }}>{total_price} <span className="text-3xl font-medium mb-0 mx-0 w-max mt-0" style={{ 'color': '#315ED2' }}>Rs. Total</span> </h1>
-                            <button className=" text-white px-4 py-1 mt-5 rounded-2xl focus:outline-none" style={{ 'backgroundColor': "#315ED2" }}>
+                            <button onClick={(e)=>{
+                                e.preventDefault();
+                                navigate('/deliveryaddress',{state:{"totalAmount":total_price}});
+                            }} className=" text-white px-4 py-1 mt-5 rounded-2xl focus:outline-none" style={{ 'backgroundColor': "#315ED2" }}>
                                 Proceed to Buy
                             </button>
 

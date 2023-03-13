@@ -32,6 +32,17 @@ function AccountSetting() {
                         }}>
                         Shipping Address
                     </button>
+                    <button onClick={(e)=>{
+                        e.preventDefault();
+                        navigate('/orders');
+                    }} className="  px-12 py-2 mt-3 rounded-2xl focus:outline-none" style={{
+                            'border': '1px solid #777777',
+                            'backgroundColor': '#fff',
+                            'textAlign': 'center',
+                            'color': '#999999'
+                        }}>
+                        Orders
+                    </button>
                 </div>
             </div>
         </>
