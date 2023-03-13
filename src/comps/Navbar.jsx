@@ -2,15 +2,22 @@ import React from "react";
 import Logo from '../assets/logo.png';
 import profile from '../assets/profile.png';
 import cart from '../assets/cart.png';
+import { AccountBox } from "@mui/icons-material";
 import search from '../assets/search.png';
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { Logout } from "@mui/icons-material";
+import { Favorite } from "@mui/icons-material";
+import { getAuth, signInWithPhoneNumber, RecaptchaVerifier } from "firebase/auth";
+import app from '../Firebase';
 import { useState } from "react";
 import Drawer from "@mui/material/Drawer";
 // import Drawer from "@mui/material";
 import { Menu } from "@mui/icons-material";
 import { Box } from "@mui/material";
 function Navbar() {
+    const navigate = useNavigate();
+    const auth = getAuth(app);
     const [state, setState] = useState({
         // top: false,
         left: false,
@@ -25,16 +32,16 @@ function Navbar() {
 
 
 
-<div onClick={(e) => {
-                    e.preventDefault();
-                    navigate('/');
-                }} className="flex items-center cursor-pointer">
-                    <img src={Logo} className="w-10 h-full" alt="" />
-                    <h1 className="text-xl font-bold w-max mb-5 mt-5 ml-3" style={{ 'color': '#315ED2' }}>Singh Publication</h1>
-                </div>
+            <div onClick={(e) => {
+                e.preventDefault();
+                navigate('/');
+            }} className="flex items-center cursor-pointer">
+                <img src={Logo} className="w-10 h-full" alt="" />
+                <h1 className="text-xl font-bold w-max mb-5 mt-5 ml-3" style={{ 'color': '#315ED2' }}>Singh Publication</h1>
+            </div>
             <ul className="flex flex-col items-end">
-                
-            
+
+
                 <li className="w-56 py-2 px-2 rounded" >
                     <Box onClick={toggleDrawer(anchor, false)}>
                         <Link className="no-underline text-black mx-2 font-semibold" to="/cart">Cart</Link>
@@ -56,7 +63,12 @@ function Navbar() {
                 </li>
                 <li className="w-56 py-2 px-2 rounded" >
                     <Box onClick={toggleDrawer(anchor, false)}>
-                        <Link className="no-underline text-black mx-2 font-semibold" to="/">Logout</Link>
+                        <h1 className="no-underline text-black mx-2 font-semibold" onClick={(e)=>{
+                            e.preventDefault();
+                            localStorage.removeItem("pubuser");
+                            auth.signOut();
+                            navigate('/');
+                        }}>Logout</h1>
                     </Box>
                 </li>
 
@@ -71,7 +83,7 @@ function Navbar() {
 
         setState({ ...state, [anchor]: open });
     };
-    const navigate = useNavigate();
+    
     return (
         <>
             <div className="md:hidden block navbar">
@@ -132,13 +144,21 @@ function Navbar() {
                         e.preventDefault();
                         navigate('/wishlist');
                     }} className="w-12 h-12 ml-4 flex items-center justify-center rounded-full p-2 cursor-pointer" style={{ 'border': '1px solid #D1D1D1' }}>
-                        <img className="w-5" src={cart} alt="" />
+                        <Favorite style={{ 'color': '#315ED2' }} className="w-5" alt="" />
                     </div>
                     <div onClick={(e) => {
                         e.preventDefault();
                         navigate('/accountsetting');
                     }} className="w-12 h-12 ml-4 flex items-center justify-center rounded-full p-2 cursor-pointer" style={{ 'border': '1px solid #D1D1D1' }}>
-                        <img className="w-5" src={cart} alt="" />
+                        <AccountBox style={{ 'color': '#315ED2' }} className="w-5" alt="" />
+                    </div>
+                    <div onClick={(e) => {
+                        e.preventDefault();
+                        localStorage.removeItem("pubuser");
+                        auth.signOut();
+                        navigate('/');
+                    }} className="w-12 h-12 ml-4 flex items-center justify-center rounded-full p-2 cursor-pointer" style={{ 'border': '1px solid #D1D1D1' }}>
+                        <Logout style={{ 'color': '#315ED2' }} className="w-5" alt="" />
                     </div>
                 </div>
             </div>

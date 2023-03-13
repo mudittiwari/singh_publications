@@ -16,6 +16,7 @@ import Otp from './Otp';
 import BillingAddress from './BillingAddress';
 import { BrowserRouter,HashRouter ,Routes, Route } from 'react-router-dom';
 import Footer from './comps/Footer';
+import Product from './Product';
 function App() {
   return (
     <>
@@ -36,6 +37,7 @@ function App() {
           <Route path="/purchasedbooks" element={<PurchasedBooks />} />
           <Route path="/orderdetails" element={<Orderdetails />} />
           <Route path="/orders" element={<Orders />} />
+          <Route path="/product" element={<Product />} />
 
         </Routes>
         <Footer/>
