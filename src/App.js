@@ -35,6 +35,7 @@ function App() {
           <Route path="/deliveryaddress" element={<Deliveryaddress />} />
           <Route path="/profilesetting" element={<ProfileSetting />} />
           <Route path="/accountsetting" element={<AccountSetting />} />
+          
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/purchasedbooks" element={<PurchasedBooks />} />
@@ -46,6 +47,7 @@ function App() {
         </Routes>
         <Footer/>
       </HashRouter>
+      
     </>
   );
 }

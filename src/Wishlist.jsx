@@ -68,6 +68,7 @@ function BookComp(props) {
 function Wishlist() {
     const [user, setuser] = useState(JSON.parse(localStorage.getItem('pubuser')));
     const [items, setitems] = useState([]);
+   
     async function getitems()
     {
         let arr=[];

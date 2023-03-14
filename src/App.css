@@ -49,3 +49,10 @@
   box-shadow: 0px 0px 8.052555084228516px 5.751824855804443px #00000040;
 
 }
+#root
+{
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  justify-content:space-between;
+}

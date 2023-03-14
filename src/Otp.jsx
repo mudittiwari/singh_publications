@@ -59,7 +59,7 @@ function Otp() {
         <div id="sign-in-button"></div>
             <div className="w-screen h-screen flex items-center justify-center
             ">
-                <div className="w-4/5 h-4/5 bg-white flex flex-col items-center justify-center rounded-lg
+                <div className="w-4/5 py-5 h-max bg-white flex flex-col items-center justify-center rounded-lg
             " style={{ 'border': '1px solid #777777' }}>
                     <h1 className="text-2xl font-medium mb-5" style={{ 'color': '#315ED2' }}>OTP is sent to {location.state.phone}</h1>
                    <div className='mt-10 flex'>

@@ -7,8 +7,8 @@ function Product() {
     const [user, setuser] = useState(JSON.parse(localStorage.getItem('pubuser')));
     return (
         <>
-            <div className="w-full flex mt-10">
-                <div className="w-1/3 flex flex-col p-8" style={{ 'borderRight': '1px solid #777777' }}>
+            <div className="w-full flex md:flex-row flex-col mt-10">
+                <div className="w-full md:w-1/3 flex flex-col p-8" style={{ 'borderRight': '1px solid #777777' }}>
                     <img className="w-80" src={location.state.image_url} alt="" />
                     <h1 className="text-md font-bold mb-0 mx-0 w-max mt-0" style={{ 'color': '#315ED2', 'maxWidth': '100%' }}>{location.state.title}</h1>
                     <h1 className="text-base font-semibold mb-0 mx-0 w-max mt-0" style={{ 'color': '#777777' }}>{location.state.category}</h1>
@@ -86,7 +86,7 @@ function Product() {
                         </button>
                     </div>
                 </div>
-                <div className="w-2/3 flex flex-col justify-start p-8">
+                <div className="w-full md:w-2/3 flex flex-col justify-start p-8">
                     <h1 className="text-2xl font-medium mb-3" style={{ 'color': '#315ED2' }}>Book Description</h1>
                     <h1>{location.state.description}</h1>
                     <h1 className="text-2xl font-medium mb-3 mt-5" style={{ 'color': '#315ED2' }}>Book Description</h1>

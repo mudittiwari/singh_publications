@@ -6,7 +6,7 @@ function AccountSetting() {
         <>
             <div className="w-screen h-screen flex items-center justify-center
             ">
-                <div className="w-4/5 h-4/5 bg-white flex flex-col items-center justify-center rounded-lg
+                <div className="w-4/5 h-max py-10 bg-white flex flex-col items-center justify-center rounded-lg
             " style={{ 'border': '1px solid #777777' }}>
                     <h1 className="text-2xl font-medium mb-5" style={{ 'color': '#315ED2' }}>Account Setting</h1>
                     
@@ -32,17 +32,7 @@ function AccountSetting() {
                         }}>
                         Shipping Address
                     </button>
-                    <button onClick={(e)=>{
-                        e.preventDefault();
-                        navigate('/orders');
-                    }} className="  px-12 py-2 mt-3 rounded-2xl focus:outline-none" style={{
-                            'border': '1px solid #777777',
-                            'backgroundColor': '#fff',
-                            'textAlign': 'center',
-                            'color': '#999999'
-                        }}>
-                        Orders
-                    </button>
+                   
                 </div>
             </div>
         </>

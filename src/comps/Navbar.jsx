@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Logo from '../assets/logo.png';
 import profile from '../assets/profile.png';
 import cart from '../assets/cart.png';
-import { AccountBox } from "@mui/icons-material";
+import { AccountBox, Visibility } from "@mui/icons-material";
 import search from '../assets/search.png';
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -83,6 +83,7 @@ function Navbar() {
 
         setState({ ...state, [anchor]: open });
     };
+    const [Visibility, setVisibility] = useState("hidden");
     
     return (
         <>
@@ -122,23 +123,10 @@ function Navbar() {
                     <img src={Logo} className="w-10 h-full" alt="" />
                     <h1 className="text-2xl font-bold w-max mb-5 mt-5 ml-3" style={{ 'color': '#315ED2' }}>Singh Publication</h1>
                 </div>
-                <div className="flex items-center" >
+                <div className="flex items-center relative" >
                     <div className="rounded-3xl flex items-center p-3 mr-6" style={{ 'border': '1px solid #D1D1D1' }}>
                         <input type="text" className="focus:outline-none text-center" placeholder="Search Here" />
                         <img className="w-6 cursor-pointer" src={search} alt="" />
-                    </div>
-
-                    <div onClick={(e) => {
-                        e.preventDefault();
-                        navigate('/profilesetting');
-                    }} className="w-12 h-12 flex items-center justify-center rounded-full p-2 cursor-pointer" style={{ 'border': '1px solid #D1D1D1' }}>
-                        <img className="w-5" src={profile} alt="" />
-                    </div>
-                    <div onClick={(e) => {
-                        e.preventDefault();
-                        navigate('/cart');
-                    }} className="w-12 h-12 ml-4 flex items-center justify-center rounded-full p-2 cursor-pointer" style={{ 'border': '1px solid #D1D1D1' }}>
-                        <img className="w-5" src={cart} alt="" />
                     </div>
                     <div onClick={(e) => {
                         e.preventDefault();
@@ -146,20 +134,60 @@ function Navbar() {
                     }} className="w-12 h-12 ml-4 flex items-center justify-center rounded-full p-2 cursor-pointer" style={{ 'border': '1px solid #D1D1D1' }}>
                         <Favorite style={{ 'color': '#315ED2' }} className="w-5" alt="" />
                     </div>
+                    
                     <div onClick={(e) => {
                         e.preventDefault();
-                        navigate('/accountsetting');
+                        navigate('/cart');
                     }} className="w-12 h-12 ml-4 flex items-center justify-center rounded-full p-2 cursor-pointer" style={{ 'border': '1px solid #D1D1D1' }}>
-                        <AccountBox style={{ 'color': '#315ED2' }} className="w-5" alt="" />
+                        <img className="w-5" src={cart} alt="" />
                     </div>
-                    <div onClick={(e) => {
+                    <div onClick={(e)=>{
                         e.preventDefault();
-                        localStorage.removeItem("pubuser");
-                        auth.signOut();
-                        navigate('/');
+                        if(Visibility==="hidden"){
+                            setVisibility("visible");
+                        }
+                        else{
+                            setVisibility("hidden");
+                        }
                     }} className="w-12 h-12 ml-4 flex items-center justify-center rounded-full p-2 cursor-pointer" style={{ 'border': '1px solid #D1D1D1' }}>
-                        <Logout style={{ 'color': '#315ED2' }} className="w-5" alt="" />
+                        <img className="w-5" src={profile} alt="" />
                     </div>
+                    <div className={Visibility+" "+`absolute right-0 top-16 h-max w-44 related`}>
+                        <div onClick={(e) => {
+                            e.preventDefault();
+                            navigate('/accountsetting');
+                            setVisibility("hidden");
+                        }} className=" w-44  my-2 flex items-center justify-center cursor-pointer" >
+                            <h1 className="text-sm font-medium " style={{ 'color': '#315ED2' }}>Account Settings</h1>
+                        </div>
+                        <div onClick={(e) => {
+                            e.preventDefault();
+                            navigate('/profilesetting');
+                            setVisibility("hidden");
+                        }} className=" w-44  my-2 flex items-center justify-center cursor-pointer" >
+                            <h1 className="text-sm font-medium " style={{ 'color': '#315ED2' }}>Profile Settings</h1>
+                        </div>
+                       
+                       
+                        <div onClick={(e) => {
+                            e.preventDefault();
+                            navigate('/orders');
+                            setVisibility("hidden");
+                        }} className=" w-44  my-2 flex items-center justify-center cursor-pointer" >
+                            <h1 className="text-sm font-medium" style={{ 'color': '#315ED2' }}>Orders</h1>
+                        </div>
+                        <div onClick={(e) => {
+                            e.preventDefault();
+                            auth.signOut();
+                            localStorage.removeItem("pubuser");
+                            navigate('/');
+                            setVisibility("hidden");
+                        }} className="w-44  my-2 flex items-center justify-center cursor-pointer" >
+                            <h1 className="text-sm font-medium " style={{ 'color': '#315ED2' }}>Logout</h1>
+                        </div>
+                        
+                    </div>
+                    
                 </div>
             </div>
         </>

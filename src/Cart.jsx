@@ -115,7 +115,7 @@ function Cart() {
                             <button onClick={(e)=>{
                                 e.preventDefault();
                                 navigate('/deliveryaddress',{state:{"totalAmount":total_price}});
-                            }} className=" text-white px-4 py-1 mt-5 rounded-2xl focus:outline-none" style={{ 'backgroundColor': "#315ED2" }}>
+                            }} className=" text-white min-w-max px-4 py-1 mt-5 rounded-2xl focus:outline-none" style={{ 'backgroundColor': "#315ED2" }}>
                                 Proceed to Buy
                             </button>
 
