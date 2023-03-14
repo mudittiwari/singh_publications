@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/singh_publications/static/css/main.91a86771.css",
-    "main.js": "/singh_publications/static/js/main.575cbd47.js",
+    "main.css": "/singh_publications/static/css/main.9f04ef63.css",
+    "main.js": "/singh_publications/static/js/main.93c7a352.js",
     "static/js/787.aedd5ec9.chunk.js": "/singh_publications/static/js/787.aedd5ec9.chunk.js",
     "static/media/book.png": "/singh_publications/static/media/book.4f4d579de8df8dc107d1.png",
     "static/media/logo.svg": "/singh_publications/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/singh_publications/index.html",
-    "main.91a86771.css.map": "/singh_publications/static/css/main.91a86771.css.map",
-    "main.575cbd47.js.map": "/singh_publications/static/js/main.575cbd47.js.map",
+    "main.9f04ef63.css.map": "/singh_publications/static/css/main.9f04ef63.css.map",
+    "main.93c7a352.js.map": "/singh_publications/static/js/main.93c7a352.js.map",
     "787.aedd5ec9.chunk.js.map": "/singh_publications/static/js/787.aedd5ec9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.91a86771.css",
-    "static/js/main.575cbd47.js"
+    "static/css/main.9f04ef63.css",
+    "static/js/main.93c7a352.js"
   ]
 }
