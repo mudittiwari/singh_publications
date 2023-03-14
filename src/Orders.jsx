@@ -68,7 +68,7 @@ function Orders() {
     async function getitems() {
         let ordrs = [];
         let price = 0;
-        await axios.get(`http://localhost:5000/api/order/getuserorders`, {
+        await axios.get(`https://singh-publication.onrender.com/api/order/getuserorders`, {
             headers: {
                 'Authorization': `Bearer ${user.accessToken}`
             }, params: { id: user.id }
@@ -76,7 +76,7 @@ function Orders() {
             for (let i = 0; i < res.data.length; i++) {
                 let arr = [];
                 for (let j = 0; j < res.data[i].ProductsArray.length; j++) {
-                    await axios.get(`http://localhost:5000/api/product/products`, { params: { id: res.data[i].ProductsArray[j] } }).then((res) => {
+                    await axios.get(`https://singh-publication.onrender.com/api/product/products`, { params: { id: res.data[i].ProductsArray[j] } }).then((res) => {
                         arr.push(res.data);
                     }
                     ).catch((err) => {

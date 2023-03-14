@@ -14,7 +14,7 @@ function BookComp(props) {
             e.preventDefault();
             navigate('/product', { state: props.prod })
         }} style={{ 'border': '1px solid #777777', 'width': '45%' }} >
-            <img src={book} className="w-full mx-auto " alt="" />
+            <img src={props.prod.image_url} className="w-full mx-auto " alt="" />
             <h1 className="text-md font-bold mb-0 mx-0 w-max mt-0" style={{ 'color': '#315ED2', 'maxWidth': '100%' }}>{props.prod.title}</h1>
             <h1 className="text-base font-semibold mb-0 mx-0 w-max mt-0" style={{ 'color': '#777777' }}>{props.prod.category}</h1>
             <h1 className="text-sm font-medium mb-0 mx-0 w-max mt-0" style={{ 'color': '#777777' }}>{props.prod.subtitle}</h1>
@@ -39,7 +39,7 @@ function Home() {
     const navigate = useNavigate();
     async function getallprods()
     {
-        axios.get('http://localhost:5000/api/product/getproducts').then((res) => {
+        axios.get('https://singh-publication.onrender.com/api/product/getproducts').then((res) => {
         // console.log(res);
         setProducts(res.data);
     }).catch((err) => {

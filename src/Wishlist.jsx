@@ -29,7 +29,7 @@ function BookComp(props) {
                 <button className=" text-white md:text-base text-xs md:px-4 px-2 py-1 mt-5 rounded-2xl focus:outline-none" style={{ 'backgroundColor': "#315ED2" }} onClick={(e) => {
                             // console.log(user.accessToken);
                             e.preventDefault();
-                            axios.post("http://localhost:5000/api/user/removefromwishlist", {
+                            axios.post("https://singh-publication.onrender.com/api/user/removefromwishlist", {
 
 
                                 "product_id": props.prod.id,
@@ -76,7 +76,7 @@ function Wishlist() {
         let wishlist=JSON.parse(localStorage.getItem('pubuser')).wishlist;
         for (let index = 0; index < wishlist.length; index++) {
             const element = wishlist[index];
-            await axios.get(`http://localhost:5000/api/product/products`,{params:{id:element}}).then((res)=>{
+            await axios.get(`https://singh-publication.onrender.com/api/product/products`,{params:{id:element}}).then((res)=>{
                 arr.push(res.data);
             }
             ).catch((err)=>{

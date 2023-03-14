@@ -81,7 +81,7 @@ function BillingAddress() {
                     <button className=" text-white px-12 py-2 mt-5 mb-5 rounded-2xl focus:outline-none" style={{ 'backgroundColor': "#315ED2" }} onClick={(e) => {
                             // console.log(user.accessToken);
                             e.preventDefault();
-                            axios.post("http://localhost:5000/api/user/updatebillingaddress", {
+                            axios.post("https://singh-publication.onrender.com/api/user/updatebillingaddress", {
 
 
                                 "house": house,

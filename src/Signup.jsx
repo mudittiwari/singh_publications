@@ -100,7 +100,7 @@ function Signup() {
                     />
                     <button onClick={(e) => {
                         e.preventDefault();
-                        axios.post('http://localhost:5000/api/user/register', {
+                        axios.post('https://singh-publication.onrender.com/api/user/register', {
                             firstname: firstName,
                             lastname: lastName,
                             email: email,

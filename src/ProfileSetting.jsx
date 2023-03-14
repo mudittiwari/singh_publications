@@ -51,7 +51,7 @@ function ProfileSetting() {
                     <button onClick={(e) => {
                             // console.log(user.accessToken);
                             e.preventDefault();
-                            axios.post("http://localhost:5000/api/user/updateuser", {
+                            axios.post("https://singh-publication.onrender.com/api/user/updateuser", {
 
                                 'firstname': fname,
                                 'lastname': lname,

@@ -25,7 +25,7 @@ function Product() {
                         <button onClick={(e) => {
                             // console.log(user.accessToken);
                             e.preventDefault();
-                            axios.post("http://localhost:5000/api/user/addtocart", {
+                            axios.post("https://singh-publication.onrender.com/api/user/addtocart", {
 
 
                                 "product_id": location.state.id,
@@ -56,7 +56,7 @@ function Product() {
                         </button>
                         <button onClick={(e) => {
                             e.preventDefault();
-                            axios.post("http://localhost:5000/api/user/addtowishlist", {
+                            axios.post("https://singh-publication.onrender.com/api/user/addtowishlist", {
 
 
                                 "product_id": location.state.id,
